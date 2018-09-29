@@ -1,0 +1,69 @@
+
+#top{
+    height: 100px;
+    width: 100%;
+    /* background: purple; */
+}
+.top{
+    height: 100px;
+    width: 1224px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* position: relative */
+}
+.logo{
+    height: 51px;
+    width: 125px;
+    background: url(../images/logo_03.jpg);
+    float: left;
+    margin: 25px 0 0 132px;
+}
+.icont{
+    height: 21px;
+    width: 300px;
+    background: url(../images/111_06.jpg) no-repeat;
+    float:right;
+    margin: 39px 111px 0 0;
+}
+#center{
+    height: 650px;
+    width: 100%;
+    /* background: yellow; */
+
+}
+.center{
+    height: 650px;
+    width:1224px;
+    background: url("../images/15290438491111.jpg"); 
+    margin: 0 auto;
+}
+.login-form{
+    width: 360px;
+    height: 450px;
+    background: #fff;
+    float: right;
+    
+}
+.inp{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    
+}
+.btn1{
+    display: block;
+    width: 60px;
+    height: 40px;
+}
+.inp-top{
+    width: 360px;
+    height:80px;
+    margin-top:80px;  
+
+}
+.inp-butt{
+    width: 360px;
+    height:80px; 
+
+}
