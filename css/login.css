@@ -36,12 +36,18 @@
     width:1224px;
     background: url("../images/15290438491111.jpg"); 
     margin: 0 auto;
+    position: relative;
 }
 .login-form{
     width: 360px;
     height: 450px;
     background: #fff;
-    float: right;
+    /* float: right;
+    right: 100px; */
+    position: absolute;
+    right: 50px;
+    
+
     
 }
 .inp{
