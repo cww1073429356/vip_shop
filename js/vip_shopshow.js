@@ -6,7 +6,6 @@ var baiduInput=(function(){
             this.inp=this.ele.querySelector("input");
             this.search_list_ul=this.ele.querySelector(".search-list");
             this.event();
-
         },
         event(){
             var _this=this;
@@ -143,5 +142,103 @@ var fangda=(function () {
             console.log(this.$show_big_image.querySelector('img').src);
 
         },
+    }
+  }())
+
+
+
+
+  var push_data=(function(){
+    return{
+        init:function(){
+            //console.log($('.shop-car-btn-aaa'))
+            // this.shop_car_btn=document.querySelector('.shop-car-btn');
+            // console.log(this.shop_car_btn);
+            this.event();
+        },
+        event:function(){
+            var _this=this;
+            //点击飘红
+            $(".iphone-parameter").on("click", "li", function () {
+                $('.phone-zuizhong-pri').html($(this).has('span').find('span').html())
+                $(this).addClass('check').siblings().removeClass('check');
+            });
+
+            $.getJSON("js/push.shopshow.json", function (data) {  
+               $('.pric-title').html(data.phone[0].phone_name);
+                //  渲染配置
+                data_parameter = data.phone[0].phone_parameter;
+                //console.log(data);
+                $(".iphone-parameter-ram>li>p").eq(0).html(data_parameter.phone_ram1);
+                $(".iphone-parameter-ram>li>p").eq(1).html(data_parameter.phone_ram2);
+                $(".iphone-parameter-ram>li>p").eq(2).html(data_parameter.phone_ram3);
+                $(".iphone-parameter-ram>li>p").eq(3).html(data_parameter.phone_ram4);
+    
+                //渲染价格
+                data_price = data.phone[0].phone_price;
+                //console.log(data_price);
+                $(".iphone-parameter-ram>li>span").eq(0).html(data_price.phone_price1);
+                $(".iphone-parameter-ram>li>span").eq(1).html(data_price.phone_price2);
+                $(".iphone-parameter-ram>li>span").eq(2).html(data_price.phone_price3);
+                $(".iphone-parameter-ram>li>span").eq(3).html(data_price.phone_price4);
+    
+
+                data_color = data.phone[0].phone_color;
+                //console.log(data_color);
+                $(".iphone-parameter-Color>li>.iphone-parameter-color").eq(0).css({background:data_color.phone_color1})
+                $(".iphone-parameter-Color>li>.iphone-parameter-color").eq(1).css({background:data_color.phone_color2})
+                $(".iphone-parameter-Color>li>.iphone-parameter-color").eq(2).css({background:data_color.phone_color3})
+                $(".iphone-parameter-Color>li>.iphone-parameter-color").eq(3).css({background:data_color.phone_color4})
+                $(".iphone-parameter-Color>li>p").eq(0).html(data_color.phone_color1);
+                $(".iphone-parameter-Color>li>p").eq(1).html(data_color.phone_color2);
+                $(".iphone-parameter-Color>li>p").eq(2).html(data_color.phone_color3);
+                $(".iphone-parameter-Color>li>p").eq(3).html(data_color.phone_color4);
+     
+            });
+            // 点击加入购物车
+            $('.shop-car-btn-aaa').on('click',function(){
+                //console.log(1);
+                _this.addCar();
+            });
+            //事件监听  addEventListener
+            // this.shop_car_btn.addEventListener('click',function(){
+            //     console.log(1);
+            //     _this.addCar();
+            // },false);
+
+              
+
+        },
+        addCar:function(){
+            var shopList = localStorage.shopList || '[]';
+            shopList = JSON.parse(shopList);
+            // console.log($(".iphone-parameter-Color>.check>p").html())
+            // console.log($(".iphone-parameter-ram>.check>p").html())
+            // console.log($(".iphone-parameter-Color>.check>p").html())
+
+            // shopList = [{phone_name: "iphone10", count: 1,phone_parameter:"32gb+5gb"color:red},];
+            //console.log( $('.pric-title').html())
+            for(var j = 0; j < shopList.length; j++) {
+                // 判断手机的名字 配置 颜色是否已经存在
+                if(shopList[j].phone_name == $('.pric-title').html()&&shopList[j].phone_parameter==$(".iphone-parameter-ram>.check>p").html()&&shopList[j].color==$(".iphone-parameter-Color>.check>p").html()) {
+                    // 商品已经存在
+                    shopList[j].count = Number(shopList[j].count) + Number($('.shop-car-btn-aaa-inp-aaa').val());
+                    break;
+                }
+            }
+            if(j === shopList.length) {
+                // 商品不存在, 添加一条新数据
+                shopList.push({phone_name: $('.pric-title').html(), count: $('.shop-car-btn-aaa-inp-aaa').val(),phone_parameter:$('.iphone-parameter-ram>.check>p').html(),color:$(".iphone-parameter-Color>.check>p").html()});    
+            }
+            var sum=0;
+            for(var i = 0; i < shopList.length; i++) {
+                sum+=Number(shopList[i].count);
+            }
+            console.log(sum)
+            //console.log($(".head-shop-car-count-aaa").text())
+            $(".head-shop-car-count-aaa").text(sum)
+            
+            localStorage.shopList = JSON.stringify(shopList);
+        }
     }
   }())

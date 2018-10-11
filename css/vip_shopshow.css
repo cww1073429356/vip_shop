@@ -1,3 +1,52 @@
+#scroll-show{
+    width: 100%;
+    height: 63px;
+}
+.scroll-show{
+    width:1280px;
+    height: 63px;
+}
+.scroll-show-fix{
+    width:1280px;
+    height: 60px;
+    /* background: pink; */
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #ccc;  
+}
+.scroll-show-iphone-title{
+    height: 60px;
+    width: 27px;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left:27px;
+    line-height: 60px; 
+}
+.scroll-show-fix-ul{
+    width: 350px;
+    height: 20px;
+    float: right;
+    padding-top: 20px;
+}
+.scroll-show-fix-ul>li{
+ float: left;
+}
+.scroll-show-fix-ul>li>a{
+    padding-right: 20px;
+    padding-left: 10px;
+    border-right: 1px solid #ccc;
+}
+.scroll-show-fix-boxActive{
+    position: fixed;
+    top:0;
+    z-index: 2;
+}
+
+
+
+
+
+
 #main-img{
     width: 100%;
     height: 800px;
@@ -10,7 +59,7 @@
 .iphone-box{
     width: 450px;
     height: 500px;
-    background: pink;
+    /* background: pink; */
     float: left;
     position: relative;
 
@@ -55,6 +104,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    display: none;
 }
 .active{
     border: 1px solid red;
@@ -88,11 +138,11 @@
 }
 .iphone-parameter{
     width: 600px;
-    height: 300px;
+    height: 200px;
 }
 .iphone-parameter>li{
     width: 250px;
-    height: 100px;
+    height: 50px;
     float: left;
     margin-top: 10px;
     margin-left: 20px;
@@ -105,4 +155,19 @@
 }
 .check{
     border:1px solid red !important;
+    color: red;
+}
+.shop-car-btn-aaa-inp-aaa{
+    width: 250px;
+    height: 50px;
+    border: 0;
+    background: #ccc;
+    float: left;
+}
+.shop-car-btn-aaa{
+    width: 80px;
+    height: 50px;
+    float: left;
+    border: 0;
+    background: orange;
 }

@@ -32,7 +32,9 @@
                     <li><a href="vip_login.html" target="_blank">登陆</a></li>
                     <li><a href="vip_register.html" target="_blank">注册</a></li>
                     <li><a href="#">消息通知</a></li>
-                    <li class="last"><a href="#">购物车（0）</a></li>
+                    <li class="last"><a href="#">购物车
+                            <span style="color:red;font-size: 20px;" class="head-shop-car-count-aaa">0</span>
+                            </a></li>
                 </ul>
             </div>
         </div>
@@ -241,6 +243,27 @@
         </div>
     </div>
 
+
+
+
+
+    <div id="scroll-show">
+        <div class="scroll-show">
+            <div class="scroll-show-fix ">
+                <h2 class="scroll-show-iphone-title ">iphone10</h2>
+                <ul class="scroll-show-fix-ul">
+                    <li><a href="">小米 </a></li>
+                    <li><a href="">小米</a></li>
+                    <li><a href="">小米</a></li>
+                    <li><a href="">小米</a></li>
+                    <li><a href="">小米</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
     <div id="main-img">
         <div class="main-img">
             <div class="iphone-box">
@@ -266,7 +289,7 @@
                 <p style="font-size:12px;">
                     <span style="color:#ff4a00">「全版本直降200元」</span>
                     全球首款双频GPS / 骁龙845处理器 / 红外人脸解锁 / AI变焦双摄 / 三星 AMOLED 屏</p>
-                <span style="color:#ff4a00">5999</span>
+                <span style="color:#ff4a00" class="phone-zuizhong-pri">5999</span>
                 <div class=" user-adderss">
                     深圳市南山区南山街道.....
                 </div>
@@ -294,29 +317,45 @@
                     <h2>选择颜色</h2>
                     <li class="check">
                         <div class="iphone-parameter-color" style="background:#000;"></div>
-                        <span>黑色</span>
+                        <p>黑色</p>
                     </li>
                     <li>
                         <div class="iphone-parameter-color" style="background:red"></div>
-                        <span>红色</span>
+                        <p>红色</p>
                     </li>
                     <li>
                         <div class="iphone-parameter-color" style="background:pink"></div>
-                        <span>粉色</span>
+                        <p>粉色</p>
                     </li>
                     <li>
                         <div class="iphone-parameter-color" style="background:yellow"></div>
-                        <span>黄色</span>
+                        <p>黄色</p>
                     </li>
                 </div>
-                <input type="number" name="" id="">
-                <button>加入购物车</button>
+                <div>
+                    <span>iphone10</span>
+                    <span>iphone-parameter</span>
+                    <span>iphone-color</span>
+                    <span>iphone-pric</span>
+                </div>
+                <input type="number" name="" id="" class="shop-car-btn-aaa-inp-aaa">
+                <button class="shop-car-btn-aaa">加入购物车</button>
             </div>
         </div>
     </div>
     <!-- <script src="js/push.shopshow.json"></script> -->
     <script src="js/jquery.js"></script>
-
+    <script>
+        //当鼠标滚动超过200时,相对浏览器定位;
+        $(window).scroll( function() {
+            console.log(document.documentElement.scrollTop);
+            if(document.documentElement.scrollTop>=203){
+               $('.scroll-show-fix').addClass('.scroll-show-fix-boxActive') 
+            }else{
+                $('.scroll-show-fix').removeClass('.scroll-show-fix-boxActive')  
+            }
+         } )
+    </script>
         
  
     <script src="js/jsonp.js"></script>
@@ -325,45 +364,9 @@
     <script>
         fangda.init();
         baiduInput.init('.search');
+        push_data.init();
     </script>
     <script src="js/jquery.js"></script>
-    <script>
-        $(".iphone-parameter").on("click", "li", function () {
-            $(this).addClass('check').siblings().removeClass('check');
-        });
-        $.getJSON("js/push.shopshow.json", function (data) {   
-            //  渲染配置
-            data_parameter = data.phone[0].phone_parameter;
-            //console.log(data);
-            $(".iphone-parameter-ram>li>p").eq(0).html(data_parameter.phone_ram1);
-            $(".iphone-parameter-ram>li>p").eq(1).html(data_parameter.phone_ram2);
-            $(".iphone-parameter-ram>li>p").eq(2).html(data_parameter.phone_ram3);
-            $(".iphone-parameter-ram>li>p").eq(3).html(data_parameter.phone_ram4);
-
-            //渲染价格
-            data_price = data.phone[0].phone_price;
-            //console.log(data_price);
-            $(".iphone-parameter-ram>li>span").eq(0).html(data_price.phone_price1);
-            $(".iphone-parameter-ram>li>span").eq(1).html(data_price.phone_price2);
-            $(".iphone-parameter-ram>li>span").eq(2).html(data_price.phone_price3);
-            $(".iphone-parameter-ram>li>span").eq(3).html(data_price.phone_price4);
-
-            data_color = data.phone[0].phone_color;
-            console.log(data_color);
-            $(".iphone-parameter-Color>li>.iphone-parameter-color").eq(0).css({background:data_color.phone_color1})
-            $(".iphone-parameter-Color>li>.iphone-parameter-color").eq(1).css({background:data_color.phone_color2})
-            $(".iphone-parameter-Color>li>.iphone-parameter-color").eq(2).css({background:data_color.phone_color3})
-            $(".iphone-parameter-Color>li>.iphone-parameter-color").eq(3).css({background:data_color.phone_color4})
-            $(".iphone-parameter-Color>li>span").eq(0).html(data_color.phone_color1);
-            $(".iphone-parameter-Color>li>span").eq(1).html(data_color.phone_color2);
-            $(".iphone-parameter-Color>li>span").eq(2).html(data_color.phone_color3);
-            $(".iphone-parameter-Color>li>span").eq(3).html(data_color.phone_color4);
-
-
-          
-        })
-
-    </script>
 
 
 </body>
