@@ -1,0 +1,30 @@
+{
+    "phone": [
+        {
+            "phone_id": 1,
+            "phone_name": "iphone10",
+            "phone_parameter": 
+                {
+                    "phone_ram1": "111gb+4gb",
+                    "phone_ram2": "222gb+4gb",
+                    "phone_ram3": "333gb+4gb",
+                    "phone_ram4": "444gb+10gb"
+                },
+            "phone_price": 
+            {
+                "phone_price1": "29",
+                "phone_price2": "299",
+                "phone_price3": "2999",
+                "phone_price4": "29999"
+            },
+            "phone_color": 
+                {
+                    "phone_color1": "black",
+                    "phone_color2": "red",
+                    "phone_color3": "pink",
+                    "phone_color4": "yellow"
+                }
+            
+        }
+    ]
+}

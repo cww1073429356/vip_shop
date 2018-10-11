@@ -14,7 +14,7 @@
 .logo{
     height: 51px;
     width: 125px;
-    background: url(../images/logo_03.jpg);
+    background: url(../images/logo_03.jpg) no-repeat;
     float: left;
     margin: 25px 0 0 132px;
 }
@@ -23,9 +23,9 @@
     width: 300px;
     background: url(../images/111_06.jpg) no-repeat;
     float:right;
-    margin: 39px 111px 0 0;
+    margin: -20px 78px 0 0;
 }
-#center{
+ #center{
     height: 650px;
     width: 100%;
     /* background: yellow; */
@@ -38,13 +38,13 @@
     margin: 0 auto;
     position: relative;
 }
-.login-form{
+/* .login-form{
     width: 360px;
     height: 450px;
     background: #fff;
-    /* float: right;
-    right: 100px; */
-    position: absolute;
+     float: right;
+    right: 100px; 
+     position: absolute;
     right: 50px;
     
 
@@ -72,4 +72,4 @@
     width: 360px;
     height:80px; 
 
-}
+}  */

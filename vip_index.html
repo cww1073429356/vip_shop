@@ -5,22 +5,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/公共样式.css">
+    <link rel="stylesheet" href="css/comment.css">
     <link rel="stylesheet" href="css/vip_index.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_859124_hw9wkviodca.css">
+    <script src="js/jquery.js"></script>
 
     <title>唯品会首页</title>
 </head>
 
 <body>
 
-    <div id="vip-logo">
-        <div class="vip-logo">
-            <li ></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+    <div id="header">
+        <div id="top">
+            <div class="top">
+                <div class="top-area">深圳市 </div>
+                <ul class=" top-ul">
+                    <li class="top-login">请登录</li>
+                    <li>唯品会</li>
+                    <li>唯品会</li>
+                    <li>唯品会</li>
+                    <li>唯品会</li>
+                    <li>唯品会</li>
+                    <li>唯品会</li>
+                    <li>唯品会</li>
+                    <li>唯品会</li>
+                </ul>
+            </div>
+        </div>
+        <div id="vip-logo">
+            <div class="vip-logo">
+                <li class="li-logo"></li>
+                <li class="li-logo-bg"></li>
+                <li class="li-search">
+                    <div class="li-search-form">
+                        <input type="text" placeholder="这里是唯品会" class="search-inp">
+                        <a href="#" class="search-button iconfont icon-fangdajing"></a>
+                    </div>
+
+                </li>
+                <li class="li-carshop">
+                    <a href="#" class="li-carshop-main">
+                        <span class="icon-gouwuche iconfont"></span>
+                        <span>购物车</span>
+                        <span>0</span>
+                    </a>
+
+
+                </li>
+            </div>
+        </div>
+        <div id="nav">
+            <div class="nav">
+                
+                <li class="nav-first-main yiji">
+                        <a href="#" class="nav-first-main-a" >所有商品分类</a>
+                        <!-- <div class="nav-menulist"  >
+                                <li class="erji">
+                                    <a href="#">鞋子</a>
+                                    <div class="nav-menulist-list">1111</div>
+                                </li>
+                                <li class="erji">
+                                    <a href="#">鞋子</a>
+                                    <div class="nav-menulist-list">2222</div>
+                                </li>
+                                <li class="erji">
+                                    <a href="#">鞋子</a>
+                                    <div class="nav-menulist-list">333</div>
+                                </li>
+                                <li class="erji">
+                                    <a href="#">鞋子</a>
+                                    <div class="nav-menulist-list">444</div>
+                                </li>
+                                <li class="erji">
+                                    <a href="#">鞋子</a>
+                                    <div class="nav-menulist-list">555</div>
+                                </li>
+                                <li class="erji">
+                                    <a href="#">鞋子</a>
+                                    <div class="nav-menulist-list">666</div>
+                                </li> 
+                      
+                    </div> -->
+                    </li>
+                <li style="color: tomato " class=" yiji">首页</li>
+                <li class=" yiji">唯品会</li>
+                <li class=" yiji">唯品会</li>
+                <li class=" yiji">唯品会</li>
+                <li class=" yiji">唯品会</li>
+                <li class=" yiji">唯品会</li>
+                <li class=" yiji">唯品会</li>
+                <li class=" yiji">唯品会</li>
+                <li class=" yiji">唯品会</li>
+                <li class=" yiji">唯品会</li>
+                <li class=" yiji">唯品会</li>
+                <li class=" yiji">唯品会</li>
+            </div>
+        </div>
+        
+
         </div>
     </div>
     <div id="focus-banner">
@@ -43,6 +125,16 @@
     </div>
     <script src="js/vip-index-move-wrapper.js"></script>
     <script src="js/vip_index_wrapper.js"></script>
+    <script>
+        $(".nav-first-main").on('mouseenter', function(){
+            console.log(1);
+            $(".nav-menulist").show("slow")
+        })
+        $(".nav-first-main").on('mouseleave', function(){
+            console.log(1);
+            $(".nav-menulist").hide("slow")
+        })
+    </script>
     <script>
         getImages.init();
     </script>

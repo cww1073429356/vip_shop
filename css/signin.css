@@ -1,0 +1,161 @@
+@charset 'utf-8';
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+.header{width: 100%;
+		height: 98px;	
+}
+.logo{
+	width: 1130px;
+	margin: 0 auto;
+}
+.banner{
+	position: relative;
+	width: 100%;
+	height: 588px;
+	background: url(../images/login.jpg);
+	background-position: top center;
+}
+.cover{
+	position: relative;
+	width: 1130px;
+	margin: 0 auto;
+	padding-top: 32px;
+}
+.layout{
+	position: absolute;
+	right: 0;
+	margin-right: 0;
+	width: 410px;
+	height: 524px;
+	background: white;
+	position: absolute;
+}
+.taps{
+	width: 410px;
+	height: 83px;
+	line-height: 83px;
+	font-size: 24px;
+	text-align: center;
+	margin: 0 auto;
+}
+.taps-tag,.taps-link{
+	text-decoration: none;
+	color: #f56600;
+}
+.taps-link{
+	color: black;
+}
+.taps-link:hover{
+	color: #f56600;
+}
+.line{
+	width: 1px;
+    height: 24px;
+    margin: 0 35px 0 42px;
+    border: 1px solid #e0e0e0;
+}
+.ipt{
+	width: 348px;
+	height: 216.2px;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+input{
+	width: 314px;
+	height: 18px;
+	padding: 13px 16px 13px 14px;
+	margin-bottom: 14px;
+}
+.btn{
+	width: 348px;
+	height: 50px;
+	background: pink;
+	color: white;
+	font-size: 14px;
+	line-height: 50px;
+	text-align: center;
+	border:0;
+	cursor: pointer;
+	margin-bottom: 14px;
+}
+.other a{
+	font-size: 14px;
+	text-decoration: none;
+}
+.phone-in{
+	color: #ef5b00;
+}
+.phone-up{
+	float: right;
+	color: #888;
+}
+.phone-up:hover{
+	color: #ef5b00;
+}
+.under{
+	width: 348px;
+	height: 66.2px;
+	margin: 0 auto;
+	margin-top: 130px;
+}
+.another{
+	width: 348px;
+	margin: 0 auto;
+	border: 0;
+	border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #757575;
+}
+.font{
+	height: 34px;
+	padding-top: 3px;
+	text-align: center;
+}
+.font a{
+	display: inline-block;
+	/*float: left;*/
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin: 0 17px;
+}
+
+.font i{
+	display: block;
+	width: 18px;
+	height: 18px;
+	margin: 4px auto 0;
+	vertical-align: middle;
+	background: url(../images/icons_type.png);
+
+}
+.font .btn_qq{			
+	background-position: -19px 0;
+}
+.btn-qq{
+	background-color: #0288d1;
+}
+.font .btn-sina{
+	background-color: #d32f2f;
+}
+.font .btn_sina{
+	background-position: -38px 0;
+}
+.font .btn-ali{
+	background-color: #0ae;
+}
+.font .btn_ali{
+	width: 25px;
+	background-position: -57px 0;
+}
+.font .btn-wechat{
+	background-color: #00d20d;
+}
+.font .btn_wechat{
+	width: 24px;
+	background-position: -83px 0;
+}
+
+

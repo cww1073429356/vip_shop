@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>唯品会登录页面</title>
-    <link rel="stylesheet" href="css/公共样式.css">
+    <link rel="stylesheet" href="css/comment.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/signin.css">
 </head>
 
 <body>
@@ -17,21 +18,50 @@
             <div class="icont"></div>
         </div>
     </div>
-        <div id=center>
-            <div class="center">
-                <form class="login-form" onsubmit="return false" autocomplete="off">
-                   <div class="inp-top">
-                    账号:<input class="inp" name="username" type="text" required="required" placeholder="用户名" />
+    <div id=center>
+        <div class="center">
+            <div class="taps">
+                <a href="" class="taps-tag">账号登陆</a>
+                <span class="line"></span>
+                <a href="" class="taps-link">扫码登陆</a>
+            </div>
+
+            <form class="login-form ipt" onsubmit="return false" autocomplete="off">
+
+                <input class="inp" name="username" type="text" required="required" placeholder="用户名" /><br>
+
+
+                <input class="inp" name="password" type="password" required="required" placeholder="密码" />
+
+                <a href="vip_register.html" class="btn2">注册账号</a>
+                <button class="btn1 btn" type="submit" name="login-btn ">登录</button>
+                <div class="other">
+                    <span><a href="" class="phone-in">手机短信登陆/注册</a></span>
+                    <span><a href="" class="phone-up">立即注册/忘记密码</a></span>
                 </div>
-                    <div class="inp-butt">
-                    密码:<input class="inp" name="password" type="password" required="required" placeholder="密码" />
-                    </div>
-                    <a href="vip_register.html" class="btn2">注册账号</a>
-                    <button class="btn1" type="submit" name="login-btn ">登录</button>
-                </form>
+            </form>
+            <div class="under">
+                <fieldset class="another">
+                    <legend>其他方式登陆</legend>
+                </fieldset>
+                <ul class="font">
+                    <a href="" class="btn-qq btn-all">
+                        <i class="btn_qq"></i>
+                    </a>
+                    <a href="" class="btn-sina btn-all">
+                        <i class="btn_sina"></i>
+                    </a>
+                    <a href="" class="btn-ali btn-all">
+                        <i class="btn_ali"></i>
+                    </a>
+                    <a href="" class="btn-wechat btn-all">
+                        <i class="btn_wechat"></i>
+                    </a>
+                </ul>
             </div>
         </div>
-    
+    </div>
+
     <script src="js/ajax.js"></script>
     <script src="js/vip_login.js"></script>
     <script>

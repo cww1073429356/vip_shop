@@ -1,3 +1,141 @@
+
+#header{
+    width: 100%;
+    height: 171px;
+}
+#top{
+    width: 100%;
+    height: 28px;
+}
+.top{
+    width: 1000px;
+    height: 28px;
+    margin: 0 auto;
+    /* background: blueviolet; */
+}
+.top-area{
+    width: 86px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: center;
+    float: left;
+}
+.top-ul{
+    width: 771px;
+    height: 28px;
+    float: right;
+}
+.top-ul>li{
+    float: left;
+    font: 12px/1.5 tahoma,arial,Hiragino Sans GB,WenQuanYi Micro Hei,\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;
+    line-height: 28px;
+    text-align: center;
+    padding-right: 26px;
+    cursor: pointer;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#vip-logo{
+    width: 100%;
+    height: 100px;
+}
+.vip-logo{
+    width: 1000px;
+    height: 100px;
+    /* background: pink; */
+    margin:  0 auto;
+}
+.vip-logo>li{
+    height: 100px;
+    float: left;
+}
+.li-logo{
+    width: 160px;
+    background: url(../images/logo_03.jpg) no-repeat center
+}
+.li-logo-bg{
+    width: 303px;
+    background: url(../images/111_06.jpg) no-repeat center
+}
+.li-search{
+    width: 389px;
+    margin: 0px 0 0 30px;
+
+}
+.li-search-form{
+    width: 389px;
+    height: 34px;
+    margin: 33px 0 0 0px;
+    /* background: blue; */
+
+}
+.search-inp{
+    width: 335px;
+    height: 32px;
+    border: 1px solid red;
+    border-right: none;
+    float: left;
+}
+.search-button{
+    display: block;
+    background: red;
+    width: 52px;
+    height: 32px;
+    border: 1px solid red;
+    border-left: none;
+    float: left;
+    font-size: 28px !important;
+    text-align: center;
+    line-height: 32px;
+}
+.li-carshop{
+    width: 96px;
+    height: 100px;
+    /* background:yellow; */
+    margin: 0px 0 0 20px;
+   
+}
+.li-carshop-main{
+    display: block;
+    width: 96px;
+    height: 32px;
+    border:1px solid #ccc;
+    margin: 33px 0 0 0px;
+    font-size: 12px;
+    line-height: 32px;
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 轮播图 */
 #focus-banner{
     width: 100%;
     height: 442px;
@@ -63,5 +201,91 @@
 .active{
     border-bottom: 3px solid red;
 }
+
+
+
+
+#nav{
+    height: 43px;
+    width: 100%;
+}
+.nav{
+    height: 43px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.yiji{
+    display: block;
+    float: left;
+    height: 43px;
+    width: 62px;
+    line-height: 43px;
+    text-align: center;
+    color: #333;
+    cursor: pointer ;
+    position: relative;
+}
+.nav>li:hover{
+    color:red;
+}
+.nav-first-main{
+    width: 156px !important;
+    background: palevioletred;
+    
+}
+.nav-first-main-a{
+    width: 156px ;
+    width: 43px;
+  
+
+}
+/* .nav-first-main:hover .nav-menulist{
+    display: block;
+} */
+/* #nav-menu{
+    height: 300px;
+    width: 100%;
+} */
+.nav-menulist{
+    height: 300px;
+    width: 1000px;
+    margin: 0 auto;
+    /* background:palevioletred; */
+    position: absolute;
+    z-index: 9;
+  
+}
+.erji{
+    display: block;
+    width: 156px !important;
+    height: 43px;
+
+}
+.erji>a{
+    display: block;
+    width: 156px;
+    height: 43px;
+    text-align: center;
+    line-height: 43px;
+
+}
+.erji>a:hover{
+    background: #fff;
+}
+.nav-menulist-list{
+    position: absolute;
+    width: 844px;
+    height: 300px;
+    background: #333;
+    left:287px;
+    top:172px;
+    display: none;
+}
+.erji:hover .nav-menulist-list{
+    display: block
+}
+
+
+
 
 

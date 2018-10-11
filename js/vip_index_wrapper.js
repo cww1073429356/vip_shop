@@ -1,6 +1,6 @@
 
             var getImages=(function () {
-                var $ul=document.querySelector(".focus-banner-con-img");
+                var $ul=document.querySelector("#pic-banner");
                 var $uu=document.querySelector(".focus-banner-con-bottom");
                 var $ul_li=$ul.getElementsByTagName("li");
                 var $uu_li=$uu.getElementsByTagName("li");
@@ -8,6 +8,10 @@
     
                 return {
                     init:function () {
+                        this.index=0;
+                        for(var i=0;i<$uu_li.length;i++){
+                            $uu_li[i].index=i;
+                        }
                         this.event();
                         this.profo();
                         this.autoPlay();
@@ -18,12 +22,10 @@
                             ev=ev||window.event;
                             var target=ev.target||ev.srcElement;
                             if(target.nodeName=="LI"){
-                             var num=target.innerHTML-1;
-                             //console.log(num);
+                             var num=target.index;
+                            //  console.log(target.innerHTML);
                                 _this.autoPlay(num);
                                 _this.profo(num);
-    
-    
                             }
                         }
                     },
@@ -36,8 +38,6 @@
                                num=0;
                            }
                            _this.profo(num);
-    
-    
                         },1000)
                     },
                     profo:function (num=0) {
@@ -52,10 +52,7 @@
                                 //console.log(obj)
                                 //console.log()
                                 obj.style.display="none";
-    
                             }
-    
-    
                         }
                         $uu_li[num].className="active";
                         //$ul_li[num].style.display="";
@@ -67,3 +64,154 @@
     
                 }
         }());
+
+
+
+
+
+    // 利用jsonp调用百度框   
+    var baiduInput=(function(){
+        return {
+            init:function(ele){
+                this.ele=document.querySelector(ele);
+                //console.log(this.ele);
+                this.inp=this.ele.querySelector("input");
+                this.search_list_ul=this.ele.querySelector(".search-list");
+                this.event();
+
+            },
+            event(){
+                var _this=this;
+                this.inp.onfocus=function(){
+                    _this.judgeInp();
+                }
+                this.inp.oninput=function(){
+                    _this.judgeInp();
+                    _this.getData();
+                }
+                this.search_list_ul.onclick=function(e){
+                    e=e||window.event;
+                    var target=e.target||e.srcElement;
+                    if(target.nodeName=="LI"){
+                        _this.inp.value=target.innerHTML;
+                        _this.show_ul();   
+                    }
+                }
+            },
+            show_ul:function(val){
+                val=val||"none";
+                this.search_list_ul.style.display=val;
+            },
+            judgeInp:function(){
+                if(this.inp.value==""){
+                    this.show_ul();
+                }else{
+                    this.show_ul("block");
+                }
+            },
+            getData:function(){
+                var params={
+                    wd:this.inp.value,
+                    cb:"baiduInput.insertData"
+                }
+                jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su",params);
+                
+            },
+            insertData:function(data){
+                //console.log(data)
+                data=data.s;
+                data=data.map(function(x){
+                    return "<li>"+x+"</li>";
+                })
+                //console.log(data);
+                this.search_list_ul.innerHTML=data.join("");
+            }
+        }
+    }());
+
+
+
+
+    //倒计时
+    var timeDown=(function(futureDate){
+        return {
+            init:function(futureDate){
+                this.event();
+                this.pushDate(futureDate);
+                
+            },
+            event:function(){
+
+            },
+            cont:function(futureDate){
+                var dateNow=new Date();
+                var time1=(futureDate.getTime()-dateNow.getTime())/1000;
+                // console.log(time1);
+                var sec=Math.floor(time1%60);
+                var min=Math.floor((time1/60)%60);
+                var hours=Math.floor((time1/60)/60%24);
+                //console.log("秒"+sec+"分钟"+min+"小时"+hours);
+                var obj={};
+                obj.hours=hours;
+                obj.min=min;
+                obj.sec=sec;
+                obj=this.buling(obj);
+                return obj
+            },
+            pushDate:function(futureDate){
+                var futureDate=new Date(futureDate);
+                var _this=this
+                var timer=setInterval(function(){
+                    var obj=_this.cont(futureDate);
+                    //console.log(obj);
+                    $(".time-hours").html(obj.hours);
+                    $(".time-min").html(obj.min);
+                    $(".time-sec").html(obj.sec);
+                },1000)
+            },
+            buling:function(obj){
+                if(obj.hours < 10) {
+                    obj.hours  = '0' + obj.hours;
+                }
+                if(obj.min < 10) {
+                    obj.min = '0' + obj.min;
+                }
+                if(obj.sec < 10) {
+                    obj.sec = '0' + obj.sec;
+                }
+                return obj;
+            },
+        }
+    }());
+
+
+
+
+var head_nav_replace = (function () {
+    return {
+        init: function () {
+            this.event();
+
+        },
+        event: function () {
+            var _this = this;
+            // .head-nav-ul头部导航展示
+            $('.head-nav-ul').on('mouseenter', 'li', function () {
+                $('.head-nav-show-iphonePro').stop().animate({ height: '300' }, 500);
+                //console.log($(this).index());
+                $('.head-nav-show-iphonePro').html($(this).find('ul').html());
+            });
+            $('.head-nav-ul').on('mouseleave', function () {
+
+                $('.head-nav-show-iphonePro').stop
+                    ().animate({ height: '0' }, 500);
+                $('.head-nav-show-iphonePro').html();
+            });
+            // 家电展示
+            $('.jiadian-nav-ul').on('mouseenter','li',function(){
+            $('.down-one').eq($(this).index()).css({'display':'block'}).siblings().css({'display':'none'})
+            })
+
+        },
+    }
+}());

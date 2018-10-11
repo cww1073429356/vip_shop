@@ -1,0 +1,154 @@
+#inf {
+	width: 100%;
+	height: 81px;
+}
+
+#inf .inf {
+	width: 1280px;
+	height: 80px;
+	border-bottom: 1px solid #ccc;
+	margin: 0 auto;
+}
+
+#inf .inf li {
+	float: left;
+	width: 244px;
+	height: 80px;
+	background: url(../images/888_03.jpg) no-repeat right center;
+}
+
+.inf li:last-child {
+	background: #fff;
+}
+
+#inf .inf a {
+	display: block;
+	width: 244px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	font-size: 16px;
+	color: #6179b4;
+}
+
+#inf li:hover a {
+	background: red;
+}
+
+#dao {
+	width: 100%;
+	height: 192px;
+}
+
+#dao .dao {
+	width: 1000px;
+	height: 192px;
+	margin: 0 auto;
+}
+
+.dao .dao1 {
+	float: left;
+	width: 130px;
+}
+
+.dao1 dt {
+	font-size: 20px;
+	line-height: 20px;
+	margin-top: 41px;
+	color: #424242;
+	margin-bottom: 32px;
+}
+
+.dao1 dd {
+	font-size: 12px;
+	line-height: 12px;
+	margin: 17px 0 17px 0;
+}
+
+.dao .dao2 {
+	float: left;
+	width: 200px;
+	height: 192px;
+	background: url(../images/212121_03.jpg) no-repeat left center;
+	text-align: center;
+	position: relative;
+}
+
+.dao .dao2 img {
+	display: block;
+	position: absolute;
+	left: 68px;
+	top: 121px;
+}
+
+.footerbottom {
+	padding-top: 30px;
+	height: 136px;
+	background: #fafafa;
+}
+
+.footerbottom .main .logimg {
+	float: left;
+}
+
+.footerbottom .main div {
+	float: left;
+	margin-left: 10px;
+}
+
+.footerbottom .main div ul li {
+	float: left;
+}
+
+.footerbottom .main div ul li a {
+	display: block;
+	color: #727272;
+	font-size: 12px;
+	text-decoration: none;
+	text-align: center;
+	padding: 0 4px;
+	border-right: 1px solid #ccc;
+}
+
+.footerbottom .main div ul li a:hover {
+	color: #ff8a00;
+}
+
+.footerbottom .main div span p {
+	display: inline-block;
+	color: #b0b0b0;
+	font-size: 12px;
+}
+
+.footerbottom .main div span a {
+	color: #b0b0b0;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.footerbottom .main div span a:hover {
+	color: #ff8a00;
+}
+
+.footerbottom .main div p {
+	color: #b0b0b0;
+	font-size: 12px;
+}
+
+.footerbottom .main .loglist {
+	float: right;
+}
+
+.footerbottom .main .loglist  img {
+	width: 84px;
+	height: 28px;
+	display: inline-block;
+}
+
+.footerbottom .main .mi {
+	width: 268px;
+	height: 18px;
+	position: relative;
+	top: 60px;
+	left: -200px;
+}
