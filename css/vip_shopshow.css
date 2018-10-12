@@ -36,10 +36,12 @@
     padding-left: 10px;
     border-right: 1px solid #ccc;
 }
+
 .scroll-show-fix-boxActive{
     position: fixed;
     top:0;
     z-index: 2;
+    background: #fff;
 }
 
 

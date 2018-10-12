@@ -1,65 +1,3 @@
-var baiduInput=(function(){
-    return {
-        init:function(ele){
-            this.ele=document.querySelector(ele);
-            //console.log(this.ele);
-            this.inp=this.ele.querySelector("input");
-            this.search_list_ul=this.ele.querySelector(".search-list");
-            this.event();
-        },
-        event(){
-            var _this=this;
-            this.inp.onfocus=function(){
-                _this.judgeInp();
-            }
-            this.inp.oninput=function(){
-                _this.judgeInp();
-                _this.getData();
-            }
-            this.search_list_ul.onclick=function(e){
-                e=e||window.event;
-                var target=e.target||e.srcElement;
-                if(target.nodeName=="LI"){
-                    _this.inp.value=target.innerHTML;
-                    _this.show_ul();   
-                }
-            }
-        },
-        show_ul:function(val){
-            val=val||"none";
-            this.search_list_ul.style.display=val;
-        },
-        judgeInp:function(){
-            if(this.inp.value==""){
-                this.show_ul();
-            }else{
-                this.show_ul("block");
-            }
-        },
-        getData:function(){
-            var params={
-                wd:this.inp.value,
-                cb:"baiduInput.insertData"
-            }
-            jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su",params);
-            
-        },
-        insertData:function(data){
-            //console.log(data)
-            data=data.s;
-            data=data.map(function(x){
-                return "<li>"+x+"</li>";
-            })
-            //console.log(data);
-            this.search_list_ul.innerHTML=data.join("");
-        }
-    }
-}());
-
-
-
-
-
 
 var fangda=(function () {
     return{
@@ -228,7 +166,7 @@ var fangda=(function () {
             }
             if(j === shopList.length) {
                 // 商品不存在, 添加一条新数据
-                shopList.push({phone_name: $('.pric-title').html(), count: $('.shop-car-btn-aaa-inp-aaa').val(),phone_parameter:$('.iphone-parameter-ram>.check>p').html(),color:$(".iphone-parameter-Color>.check>p").html()});    
+                shopList.push({phone_name: $('.pric-title').html(), count: $('.shop-car-btn-aaa-inp-aaa').val(),phone_parameter:$('.iphone-parameter-ram>.check>p').html(),color:$(".iphone-parameter-Color>.check>p").html(),phone_price:$('.iphone-parameter-ram>.check>span').html()});    
             }
             var sum=0;
             for(var i = 0; i < shopList.length; i++) {

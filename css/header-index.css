@@ -12,15 +12,18 @@ img{display: block;}
 }
 
 #first .nav {
-	width: 975px;
+	width: 900px;
 	height: 40px;
 	float: left;
 }
 
 #first .nav2 {
-	width: 305px;
+	width: 380px;
 	height: 40px;
 	float: left;
+}
+.nav2-login-username{
+	color:red !important;
 }
 
 #first ul li {

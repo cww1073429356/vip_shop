@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div id="first">
+    <!-- <div id="first">
         <div class="top">
             <div class="nav">
                 <ul>
@@ -234,14 +234,16 @@
             <form action="" class="search-input">
                 <input class="se" type="text">
                 <ul class="search-list">
-                    <!-- <li>你好世界</li>
+                     <li>你好世界</li>
                                 <li>q</li>
-                                <li>d</li> -->
+                                <li>d</li> 
                 </ul>
                 <input class="pic" type="submit" value="">
             </form>
         </div>
-    </div>
+    </div> -->
+    <div id="head-frist"></div>
+	<div id="nav-seach-main"></div>
 
 
 
@@ -348,11 +350,11 @@
     <script>
         //当鼠标滚动超过200时,相对浏览器定位;
         $(window).scroll( function() {
-            console.log(document.documentElement.scrollTop);
+            //console.log(document.documentElement.scrollTop);
             if(document.documentElement.scrollTop>=203){
-               $('.scroll-show-fix').addClass('.scroll-show-fix-boxActive') 
+               $('.scroll-show-fix').addClass('scroll-show-fix-boxActive') 
             }else{
-                $('.scroll-show-fix').removeClass('.scroll-show-fix-boxActive')  
+                $('.scroll-show-fix').removeClass('scroll-show-fix-boxActive')  
             }
          } )
     </script>
@@ -361,9 +363,17 @@
     <script src="js/jsonp.js"></script>
     <script type="text/javascript" src="js/vip_shopshow.js"></script>
     <script src="js/vip_shopshow.js"></script>
+    <script src="js/commond.js"></script>
+    
     <script>
+        $('#head-frist').load('commond.html #first');
+        $('#nav-seach-main').load('commond.html #head', function () {
+            baiduInput.init('.search-input');
+            head_nav_replace.init();
+            get_login_username.init();
+        })
+        $('#foot').load('commond.html footer');
         fangda.init();
-        baiduInput.init('.search');
         push_data.init();
     </script>
     <script src="js/jquery.js"></script>

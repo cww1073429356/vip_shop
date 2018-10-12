@@ -1,11 +1,37 @@
 #page-main{
     width: 100%;
     height: 1000px;
+    background: #eee;
 
 }
 .page-main{
     width: 1226px;
     height: 1000px;
     margin: 0 auto;
-    background: #eee;
+    
 }
+.page-main-heade{
+    width: 1226px;
+    height: 70px;
+    background: #fff;
+    border-bottom:1px solid #ccc;
+}
+.page-main-shop-show{
+    width: 1226px;
+    height: 117px;
+    background: #fff;
+}
+.row-center{
+    line-height: 70px;
+}
+.count-subtraction,.count-data,.count-add{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: #ccc;
+}
+.count{
+    cursor: pointer;
+}
+

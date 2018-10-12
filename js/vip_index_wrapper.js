@@ -69,65 +69,7 @@
 
 
 
-    // 利用jsonp调用百度框   
-    var baiduInput=(function(){
-        return {
-            init:function(ele){
-                this.ele=document.querySelector(ele);
-                //console.log(this.ele);
-                this.inp=this.ele.querySelector("input");
-                this.search_list_ul=this.ele.querySelector(".search-list");
-                this.event();
-
-            },
-            event(){
-                var _this=this;
-                this.inp.onfocus=function(){
-                    _this.judgeInp();
-                }
-                this.inp.oninput=function(){
-                    _this.judgeInp();
-                    _this.getData();
-                }
-                this.search_list_ul.onclick=function(e){
-                    e=e||window.event;
-                    var target=e.target||e.srcElement;
-                    if(target.nodeName=="LI"){
-                        _this.inp.value=target.innerHTML;
-                        _this.show_ul();   
-                    }
-                }
-            },
-            show_ul:function(val){
-                val=val||"none";
-                this.search_list_ul.style.display=val;
-            },
-            judgeInp:function(){
-                if(this.inp.value==""){
-                    this.show_ul();
-                }else{
-                    this.show_ul("block");
-                }
-            },
-            getData:function(){
-                var params={
-                    wd:this.inp.value,
-                    cb:"baiduInput.insertData"
-                }
-                jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su",params);
-                
-            },
-            insertData:function(data){
-                //console.log(data)
-                data=data.s;
-                data=data.map(function(x){
-                    return "<li>"+x+"</li>";
-                })
-                //console.log(data);
-                this.search_list_ul.innerHTML=data.join("");
-            }
-        }
-    }());
+   
 
 
 
@@ -187,31 +129,3 @@
 
 
 
-var head_nav_replace = (function () {
-    return {
-        init: function () {
-            this.event();
-
-        },
-        event: function () {
-            var _this = this;
-            // .head-nav-ul头部导航展示
-            $('.head-nav-ul').on('mouseenter', 'li', function () {
-                $('.head-nav-show-iphonePro').stop().animate({ height: '300' }, 500);
-                //console.log($(this).index());
-                $('.head-nav-show-iphonePro').html($(this).find('ul').html());
-            });
-            $('.head-nav-ul').on('mouseleave', function () {
-
-                $('.head-nav-show-iphonePro').stop
-                    ().animate({ height: '0' }, 500);
-                $('.head-nav-show-iphonePro').html();
-            });
-            // 家电展示
-            $('.jiadian-nav-ul').on('mouseenter','li',function(){
-            $('.down-one').eq($(this).index()).css({'display':'block'}).siblings().css({'display':'none'})
-            })
-
-        },
-    }
-}());
