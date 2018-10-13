@@ -35,3 +35,75 @@
     cursor: pointer;
 }
 
+
+
+.page-main-cover{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(95, 91, 91, 0.5);
+    display: none;
+    z-index: 1;
+
+}
+
+.cover-box {
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -125px;
+
+}
+
+.cover-head {
+    width: 500px;
+    height: 50px;
+    background: blue;
+    line-height: 50px;
+    text-align: center;
+}
+
+.cover-main{
+    width: 500px;
+    height: 200px;
+    background: #fff;
+    position: relative;
+    /* line-height: 200px; */
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.cover-btn-yes {
+    /* width: 32px;
+    height: 20px; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    left: 200px;
+    bottom: 20px;
+}
+
+.cover-btn-no{
+    position: absolute;
+    right: 200px;
+    bottom: 20px;
+}
+.cover-main>p{
+    margin: 40px auto;
+    font-size: 20px;
+    color: red;
+}
+.account-btn{
+    background: pink;
+    font-size: 20px;
+    line-height:50px; 
+    cursor: pointer;
+}
+.page-main-pay{
+    height: 50px;
+}
+

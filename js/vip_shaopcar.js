@@ -40,7 +40,7 @@ var vip_shopCar_pay=(function(){
                 arr.push(` <div class="page-main-shop-show">
                 <div class="row">
                     <div class="col-md-2">
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="checked-phone" id="" >
                     </div>
                     <div class="col-md-1">
                         <img src="images/show-shop/thumbnail_1.jpg" alt="">
@@ -54,12 +54,14 @@ var vip_shopCar_pay=(function(){
                     <div class="col-md-1"><div class="count-subtraction count" attr-id=${i} >-</div>
                     <input type="text" value=${data[i].count} class="count-data">
                     <div class="count-add count" attr-id=${i}>+</div></div>
-                    <div class="col-md-2"><span>${data[i].phone_price*data[i].count}</span></div>
-                    <div class="col-md-1 iphone-del"><button>不想要了</button></div>
+                    <div class="col-md-2"><span class="phone-total" attr-id=${i} >${data[i].phone_price*data[i].count}</span></div>
+                    <div class="col-md-1 iphone-del"><button attr-id=${i} class="iphone-del-btn">不想要了</button></div>
                   </div>
             </div>`)
             }
+           
             $('.page-main-heade-main')[0].innerHTML = arr.join('');
+            vip_shopCar_count.phoneTotal();
         }
     }
 }());
@@ -69,6 +71,7 @@ var vip_shopCar_count=(function(){
         init:function(){
             this.event();
             this.resetShopcar();
+            
         },
         event:function(){
             var _this=this;
@@ -82,9 +85,11 @@ var vip_shopCar_count=(function(){
                     var arr=_this.resetShopcar();
                     var index=$(this)[0].getAttribute('attr-id');  //attr-id为自定义属性;
                     arr[index].count=$(this).siblings('.count-data').val();
+                    $(this).siblings('.count-data')[0].value=$(this).siblings('.count-data').val();
+                     var sum=arr[index].phone_price*arr[index].count;
+                    $('.phone-total')[index].innerHTML=sum;
                     localStorage.shopList = JSON.stringify(arr); 
-                    vip_shopCar_pay.insertData(arr);  
-                    
+                    vip_shopCar_count.phoneTotal();
                     break;
 
                     case "-":
@@ -93,18 +98,69 @@ var vip_shopCar_count=(function(){
                     var arr=_this.resetShopcar();
                     var index=$(this)[0].getAttribute('attr-id');  //attr-id为自定义属性;
                     arr[index].count=$(this).siblings('.count-data').val();
+                    $(this).siblings('.count-data')[0].value=$(this).siblings('.count-data').val();
+                    var sum=arr[index].phone_price*arr[index].count;
+                   $('.phone-total')[index].innerHTML=sum;
                     localStorage.shopList = JSON.stringify(arr);
-                    vip_shopCar_pay.insertData(arr); 
+                    vip_shopCar_count.phoneTotal();
                     break;
-                }
-                ;
+                };
+            });
+            $('.page-main-heade-main').on('click','input[name="checked-phone"]:checkbox',function(){
+                vip_shopCar_count.phoneTotal();
             })
+            //del弹窗;
+            $('.page-main-heade-main').on('click','.iphone-del-btn',function(){
+                // console.log(1);
+                var _this=this
+                $('.page-main-cover').css({display:"block"});
+                var index=$(this)[0].getAttribute('attr-id');
+                $('.cover-btn-yes').click(function(){
+                    var arr=vip_shopCar_count.resetShopcar();
+                    arr.splice(index,1);
+                    //console.log(arr);
+                    localStorage.shopList = JSON.stringify(arr);
+                    vip_shopCar_pay.insertData(arr);
+                     $('.page-main-cover').css({display:'none'});
+                })
+                $('.cover-btn-no').click(function(){
+                    $('.page-main-cover').css({display:'none'});
+
+                })
+                
+
+            })
+            //复选框(全选框);
+            $('input[name="checked-all-phone"]').change(function(){
+                var _this=this;
+                $('input[name="checked-phone"]:checkbox').each(function(){
+                    $(this).prop('checked',$(_this).is(':checked')?true:false);
+                    // vip_shopCar_count.phoneTotal();  
+                })
+                 vip_shopCar_count.phoneTotal();   
+            })
+
         },
          resetShopcar:function(){
             var shopList = localStorage.shopList; 
             shopList = JSON.parse(shopList);
             return shopList;   
          },
+         phoneTotal:function(){
+            //console.log($('input[name="checked-phone"]:checkbox').length); 
+            var sum=0;
+            $('input[name="checked-phone"]:checkbox').each(function(){
+                if($(this).is(':checked')){
+                    //console.log($(this).index('input[name="checked-phone"]:checkbox'));
+                    var index=$(this).index('input[name="checked-phone"]:checkbox');
+                    // console.log($('.phone-total[attr-id=index]'));
+                    
+                    sum=sum+($('.phone-total')[index].innerHTML-0);
+                    $('.phone-sum').html(sum);
+                }
+            })
+
+         }
     }
 }())
 
