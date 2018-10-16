@@ -8,21 +8,29 @@ var head_nav_replace = (function () {
             var _this = this;
             // .head-nav-ul头部导航展示
             $('.head-nav-ul').on('mouseenter', 'li', function () {
-                $('.head-nav-show-iphonePro').stop().animate({ height: '300' }, 500);
-                //console.log($(this).index());
-                $('.head-nav-show-iphonePro').html($(this).find('ul').html());
+                if($(this).index()<=7){
+                    $('.head-nav-show-iphonePro').stop().animate({ height: '300' }, 500);
+                    //console.log($(this).index());
+                    $('.head-nav-show-iphonePro').html($(this).find('ul').html());
+                }else{
+                    _this.slidedown();
+                }
+
             });
             $('.head-nav-ul').on('mouseleave', function () {
+                _this.slidedown();
 
-                $('.head-nav-show-iphonePro').stop
-                    ().animate({ height: '0' }, 500);
-                $('.head-nav-show-iphonePro').html();
             });
             // 家电展示
-            $('.jiadian-nav-ul').on('mouseenter','li',function(){
+            $('.jiadian-nav-ul').on('mouseenter',function(){
             $('.down-one').eq($(this).index()).css({'display':'block'}).siblings().css({'display':'none'})
             })
         },
+        slidedown:function(){
+            $('.head-nav-show-iphonePro').stop
+            ().animate({ height: '0' }, 500);
+            $('.head-nav-show-iphonePro').html('');
+        }
     }
 }());
 

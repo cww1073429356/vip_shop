@@ -8,11 +8,15 @@
     <title>小米购物车页面+本地存储(localstorage)技术</title>
     <link rel="stylesheet" href="css/comment.css">
     <link rel="stylesheet" href="css/vip_shopcar.css">
+    <link rel="stylesheet" href="css/header-index.css">
+    <link rel="stylesheet" href="css/footer-index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
 </head>
 
 <body>
+    <div id="head-frist"></div>
+	<div id="nav-seach-main"></div>
     <div id="page-main">
         <div class="page-main">
                 <div class="page-main-cover">
@@ -67,7 +71,7 @@
             </div>
             <div class="page-main-pay">
                 <div class="row">
-                    <div class="col-md-9"><a href="#">继续购物</a></div>
+                    <div class="col-md-9"><a href="xiaomi-index.html">继续购物</a></div>
                     <div class="col-md-1">合计:
                         <span class="phone-sum">0.0</span>
                     </div>
@@ -77,9 +81,19 @@
             </div>
         </div>
     </div>
+    <div id="foot"></div>
     <script src="js/jquery.js"></script>
     <script src="js/vip_shaopcar.js"></script>
+    <script src="js/commond.js"></script>
+    <script src="js/jsonp.js"></script>
     <script>
+        $('#head-frist').load('commond.html #first');
+		$('#nav-seach-main').load('commond.html #head',function(){
+			baiduInput.init('.search-input');
+			head_nav_replace.init();
+			get_login_username.init();
+		})
+        $('#foot').load('commond.html footer');
         vip_shopCar_pay.init();
         vip_shopCar_count.init();
     </script>
@@ -87,95 +101,3 @@
 </body>
 
 </html>
-
-
-
-<!-- <!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>购物车</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/carts.css">
-</head>
-
-<body>
-    <section class="cartMain">
-        <div class="cartMain_hd">
-            <ul class="order_lists cartTop">
-                <li class="list_chk">
-
-                    <input type="checkbox" id="all" class="whole_check">
-                    <label for="all"></label>
-                    全选
-                </li>
-                <li class="list_con">手机图片</li>
-                <li class="list_info">手机参数</li>
-                <li class="list_price">单价</li>
-                <li class="list_amount">数量</li>
-                <li class="list_sum">金额</li>
-                <li class="list_op">操作</li>
-            </ul>
-        </div>
-        <div class="cartBox">
-            <div class="order_content">
-                <ul class="order_lists">
-                    <li class="list_chk">
-                        <input type="checkbox" id="checkbox_2" class="son_check">
-                        <label for="checkbox_2"></label>
-                    </li>
-                    <li class="list_con">
-                         <div class="list_img"><a href="#"><img src="images/show-shop/thumbnail_2.jpg" alt=""></a></div> 
-                        <div class="list_text"><img src="images/show-shop/thumbnail_2.jpg" alt=""></div> 
-                    </li>
-                    <li class="list_info">
-                        <p>iphone10</p>
-                        <p>1111gb+333gb</p>
-                    </li>
-                    <li class="list_price">
-                        <p class="price">￥980</p>
-                    </li>
-                    <li class="list_amount">
-                        <div class="amount_box">
-                            <a href="#" class="reduce reSty">-</a>
-                            <input type="text" value="1" class="sum">
-                            <a href="#" class="plus">+</a>
-                        </div>
-                    </li>
-                    <li class="list_sum">
-                        <p class="sum_price">￥980</p>
-                    </li>
-                    <li class="list_op">
-                        <p class="del"><a href="#" class="delBtn">移除商品</a></p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="bar-wrapper">
-            <div class="bar-right">
-                <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
-                <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
-                <div class="calBtn"><a href="javascript:;">结算</a></div>
-            </div>
-        </div>
-    </section>
-    <section class="model_bg"></section>
-    <section class="my_model">
-        <p class="title">删除宝贝<span class="closeModel">X</span></p>
-        <p>您确认要删除该宝贝吗？</p>
-        <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div>
-    </section>
-    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-    <script src="js/carts.js"></script> 
-     <script src="js/jquery.js"></script>
-    <script src="js/vip_shaopcar.js"></script>
-    <script>
-        vip_shopCar_pay.init();
-    </script>
-</body>
-
-</html> -->
