@@ -27,7 +27,8 @@
                                 _this.autoPlay(num);
                                 _this.profo(num);
                             }
-                        }
+                        };
+   
                     },
                     autoPlay:function (num=0) {
                         var _this=this;
@@ -83,6 +84,11 @@
                 
             },
             event:function(){
+            // 家电展示
+            $('.jiadian-nav-ul').on('mouseenter','li',function(){
+                console.log($(this).index())
+                $('.down-one').eq($(this).index()).css({'display':'block'}).siblings().css({'display':'none'})
+                })
 
             },
             cont:function(futureDate){
@@ -125,6 +131,8 @@
             },
         }
     }());
+            
+            
 
 
 

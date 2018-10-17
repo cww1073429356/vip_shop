@@ -25,10 +25,19 @@
 	display: block;
 	width: 244px;
 	height: 80px;
-	line-height: 80px;
-	text-align: center;
 	font-size: 16px;
 	color: #6179b4;
+	text-align: center;
+	line-height: 80px;
+}
+#inf .inf a img{
+	display: inline-block
+
+}
+#inf .inf a span{
+	display: block;
+	margin: 0 auto;
+	
 }
 
 #inf li:hover a {

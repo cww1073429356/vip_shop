@@ -22,9 +22,9 @@ var head_nav_replace = (function () {
 
             });
             // 家电展示
-            $('.jiadian-nav-ul').on('mouseenter',function(){
-            $('.down-one').eq($(this).index()).css({'display':'block'}).siblings().css({'display':'none'})
-            })
+            // $('.jiadian-nav-ul').on('mouseenter',function(){
+            // $('.down-one').eq($(this).index()).css({'display':'block'}).siblings().css({'display':'none'})
+            // })
         },
         slidedown:function(){
             $('.head-nav-show-iphonePro').stop

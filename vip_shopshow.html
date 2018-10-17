@@ -334,20 +334,19 @@
                         <p>黄色</p>
                     </li>
                 </div>
-                <div>
-                    <span>iphone10</span>
-                    <span>iphone-parameter</span>
-                    <span>iphone-color</span>
-                    <span>iphone-pric</span>
-                </div>
                 <input type="number" name="" id="" class="shop-car-btn-aaa-inp-aaa">
                 <button class="shop-car-btn-aaa">加入购物车</button>
+                <div class=" like-box no-like ">喜欢</div>
             </div>
         </div>
     </div>
     <!-- <script src="js/push.shopshow.json"></script> -->
     <script src="js/jquery.js"></script>
     <script>
+        $('.like-box').click(function(){
+            $(this).toggleClass('like')
+            $(this).toggleClass('no-like')
+        })
         //当鼠标滚动超过200时,相对浏览器定位;
         $(window).scroll( function() {
             //console.log(document.documentElement.scrollTop);

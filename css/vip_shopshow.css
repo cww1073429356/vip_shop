@@ -173,3 +173,19 @@
     border: 0;
     background: orange;
 }
+.like-box{
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    margin-left: 30px;
+    float: left;
+    width: 80px;
+    height: 50px;
+    
+}
+.like{
+    background: orange;
+}
+.no-like{
+    background: #ccc;
+}

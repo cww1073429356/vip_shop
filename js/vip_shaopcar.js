@@ -106,9 +106,9 @@ var vip_shopCar_count=(function(){
                     break;
                 };
             });
-            $('.page-main-heade-main').on('click','input[name="checked-phone"]:checkbox',function(){
-                vip_shopCar_count.phoneTotal();
-            })
+            // $('.page-main-heade-main').on('click','input:checkbox',function(){
+            //     vip_shopCar_count.phoneTotal();
+            // })
             //del弹窗;
             $('.page-main-heade-main').on('click','.iphone-del-btn',function(){
                 // console.log(1);
@@ -138,6 +138,9 @@ var vip_shopCar_count=(function(){
                     // vip_shopCar_count.phoneTotal();  
                 })
                  vip_shopCar_count.phoneTotal();   
+            });
+            $('.page-main-shop-show').on('click','input[name="checked-phone"]',function(){
+                console.log($(this).index());
             })
 
         },
