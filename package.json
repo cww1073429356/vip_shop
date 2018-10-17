@@ -1,0 +1,29 @@
+{
+  "name": "vip_shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cww1073429356/vip_shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cww1073429356/vip_shop/issues"
+  },
+  "homepage": "https://github.com/cww1073429356/vip_shop#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-connect": "^5.6.1",
+    "gulp-html-minify": "0.0.14",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-uglify": "^3.0.1"
+  }
+}
