@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin:*");
 header("Content-type: text/html; charset=UTF-8");
 // $username = $_GET['username'];
 // $password = $_GET['password'];

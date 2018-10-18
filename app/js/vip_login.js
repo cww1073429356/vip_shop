@@ -33,7 +33,7 @@ var vip_login = (function () {
                             }
                         },
                     }
-                    sendAjax("http://localhost:8888/VIP/vip_shop/php/vip_login.php", params);
+                    sendAjax("http://localhost:8888/VIP/vip_shop/app/php/vip_login.php", params);
                 }else{
                     alert("输入有误");
                 }

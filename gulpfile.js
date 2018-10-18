@@ -14,6 +14,7 @@ const gulp = require('gulp'),
 gulp.task('html', function () {
     gulp.src('app/**/*.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest('dist'))
         .pipe(connect.reload());
 });
 gulp.task('watch', () => {
@@ -39,6 +40,7 @@ gulp.task('js', function (cb) {
         .pipe(uglify()) // 直接压缩hello.js
         .pipe(gulp.dest('dist'))
 });
+gulp.task('build', [ 'js','html','watch']);
 gulp.task('default', [ 'js','html','watch','connect']);
 
 

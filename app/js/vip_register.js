@@ -27,7 +27,7 @@ var vip_register = (function () {
                 }
               },
             }
-            sendAjax("http://localhost:8888/VIP/vip_shop/php/vip_register.php", params);
+            sendAjax("http://localhost:8888/VIP/vip_shop/app/php/vip_register.php", params);
           }else{
             alert("请按照正确的格式填写");
           }
